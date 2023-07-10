@@ -11,8 +11,8 @@ using PizzeriaApplicationMVC.Data;
 namespace PizzeriaApplicationMVC.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230705215113_everthing1")]
-    partial class everthing1
+    [Migration("20230706024748_allownull")]
+    partial class allownull
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,18 +31,16 @@ namespace PizzeriaApplicationMVC.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Category")
+                        .HasColumnType("int");
 
                     b.Property<string>("PizzaIngre")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PizzaName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");

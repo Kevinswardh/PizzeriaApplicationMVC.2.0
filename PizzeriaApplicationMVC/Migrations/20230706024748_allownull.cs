@@ -4,7 +4,7 @@
 
 namespace PizzeriaApplicationMVC.Migrations
 {
-    public partial class everthing1 : Migration
+    public partial class allownull : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,10 +14,10 @@ namespace PizzeriaApplicationMVC.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PizzaName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PizzaIngre = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    PizzaName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    PizzaIngre = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<double>(type: "float", nullable: false),
-                    Category = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Category = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

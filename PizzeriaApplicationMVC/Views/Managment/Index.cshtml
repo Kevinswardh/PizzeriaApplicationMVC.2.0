@@ -1,0 +1,736 @@
+﻿@model IEnumerable<Products>
+
+@{
+    ViewData["Title"] = "Managment";
+}
+@section containerFluid
+    {
+
+    <div class="header shadow p-3 mb-5 bg-white rounded">
+        <div class="mt-4 p-5 text-white ml-5 rounded">
+        </div>
+    </div>
+
+}
+<div class="text-center pb-5">
+    <h1>Managment</h1>
+</div>
+<div class="container pb-5">
+
+    <div class=" shadow border-top ">
+        <div class="card-header bg-black bg-opacity-10 shadow">
+            <ul class="nav nav-pills justify-content-center p-1" id="pills-tab" role="tablist">
+                <li class="nav-item firstmenu" role="presentation">
+                    <button class="nav-link active first-buttons border-2" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-selected="true">Pizzor</button>
+                </li>
+                <li class="nav-item firstmenu" role="presentation">
+                    <button class="nav-link first-buttons" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-selected="false">Övrigt</button>
+                </li>
+                <li class="nav-item firstmenu" role="presentation">
+                    <button class="nav-link first-buttons" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-selected="false">Tillbehör</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content bg-black bg-opacity-25" id="pills-tabContent">
+
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <!--Pizza Section-->
+                <div class="card-body text-center shadow pb-4">
+                    <div class="card text-center mt-3 ms-2 me-2 shadow">
+                        <!--Pizza Menu-->
+                        <div class="card-header bg-black bg-opacity-10">
+                            <ul class="nav nav-tabs card-header-tabs justify-content-center" id="myTab">
+                                <li class="nav-item">
+                                    <a href="#klass1" class="nav-link active" data-bs-toggle="tab">Klass 1</a>
+                                </li>
+                                <li class="nav-item text-success">
+                                    <a href="#klass2" class="nav-link" data-bs-toggle="tab">Klass 2</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#klass3" class="nav-link" data-bs-toggle="tab">Klass 3</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#kebab" class="nav-link" data-bs-toggle="tab">Kebab</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#bacon" class="nav-link" data-bs-toggle="tab">Bacon</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#köttfärs" class="nav-link" data-bs-toggle="tab">Köttfärs</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#kyckling" class="nav-link" data-bs-toggle="tab">Kyckling</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#fläskfilé" class="nav-link" data-bs-toggle="tab">Fläskfilé</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#oxfilé" class="nav-link" data-bs-toggle="tab">Oxfilé</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body shadow  rounded-2">
+                            <div class="tab-content pb-2">
+                                <!--Klass 1 pizza-->
+                                <div class="tab-pane fade show active container pb-2" id="klass1">
+                                    <div class="card-group">
+                                        <table class="table">
+                                            <thead>
+                                                <tr class="text-center">
+                                                    <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                    <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                    <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                    <th>Actions</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model.Where(data => data.Category == 1))
+                                                {
+                                                    <tr>
+                                                        <td class="align-middle">
+                                                            @Html.DisplayFor(modelItem => item.PizzaName)
+                                                        </td>
+                                                        <td class="align-middle">
+                                                            @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                        </td>
+                                                        <td class="align-middle">
+                                                            @Html.DisplayFor(modelItem => item.Price)
+                                                        </td>
+                                                        
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+                                                        
+
+                                                    </tr>
+                                                    
+                                                }
+                                            </tbody>
+
+                                        </table>
+                                        <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                    </div>
+                                </div>
+                                <!--Klass 2 pizza-->
+                                <div class="tab-pane fade container pb-2" id="klass2">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 2))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Klass 3 pizza-->
+                                <div class="tab-pane fade container pb-2" id="klass3">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 3))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Kebab pizza-->
+                                <div class="tab-pane fade container pb-2" id="kebab">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 4))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Bacon pizza-->
+                                <div class="tab-pane fade container pb-2" id="bacon">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 5))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Köttfärs pizza-->
+                                <div class="tab-pane fade container pb-2" id="köttfärs">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 6))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Kyckling pizza-->
+                                <div class="tab-pane fade container pb-2" id="kyckling">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 7))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Fläskfilé pizza-->
+                                <div class="tab-pane fade container pb-2" id="fläskfilé">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 8))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Oxfilé pizza-->
+                                <div class="tab-pane fade container pb-2" id="oxfilé">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 9))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <!--Övrigt Section-->
+                <div class="card-body text-center shadow">
+                    <div class="card text-center mt-3 ms-2 me-2 shadow">
+                        <div class="card-header bg-black bg-opacity-10">
+                            <ul class="nav nav-tabs card-header-tabs justify-content-center" id="myTab">
+                                <li class="nav-item">
+                                    <a href="#rullar" class="nav-link active" data-bs-toggle="tab">Rullar</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#pita" class="nav-link" data-bs-toggle="tab">Pita</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#tallrikar" class="nav-link" data-bs-toggle="tab">Tallrikar</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="tab-content pb-2">
+                                <!--Rullar-->
+                                <div class="tab-pane fade show active container pb-2" id="rullar">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 10))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Pita-->
+                                <div class="tab-pane fade container pb-2" id="pita">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 11))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Tallrikar-->
+                                <div class="tab-pane fade container pb-2" id="tallrikar">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 12))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <!--Tillbehör Section-->
+                <div class="card-body text-center shadow">
+                    <div class="card text-center mt-3 ms-2 me-2 shadow">
+                        <div class="card-header bg-black bg-opacity-10">
+                            <ul class="nav nav-tabs card-header-tabs justify-content-center" id="myTab">
+                                <li class="nav-item">
+                                    <a href="#såser" class="nav-link active" data-bs-toggle="tab">Såser</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#dricka" class="nav-link" data-bs-toggle="tab">Dricka</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="tab-content pb-2">
+                                <!--Såser-->
+                                <div class="tab-pane fade show active container pb-2" id="såser">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 13))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Dricka-->
+                                <div class="tab-pane fade container pb-2" id="dricka">
+                                    <div class="row pt-2 pb-2">
+                                        <div class="card-group">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaName)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.PizzaIngre)</th>
+                                                        <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                                        <th>Actions</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in Model.Where(data => data.Category == 14))
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaName)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.PizzaIngre)
+                                                            </td>
+                                                            <td class="align-middle">
+                                                                @Html.DisplayFor(modelItem => item.Price)
+                                                            </td>
+
+                                                            <td class="align-middle">
+                                                                <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                                                                <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+
+                                            </table>
+                                            <a class="btn btn-success text-white" asp-action="Create"><i class="bi bi-plus-circle"></i> Add New </a>
+                                        </div>
+                                    </div>
+                                </div>                      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

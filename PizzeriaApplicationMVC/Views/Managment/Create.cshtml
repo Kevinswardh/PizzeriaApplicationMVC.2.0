@@ -1,0 +1,89 @@
+﻿@model Products
+
+@{
+    ViewData["Title"] = "Create a new product";
+}
+@section containerFluid
+    {
+
+    <div class="header shadow p-3 mb-5 bg-white rounded">
+        <div class="mt-4 p-5 text-white ml-5 rounded">
+        </div>
+    </div>
+
+}
+
+<div class="text-center pb-5">
+    <h1>Create</h1>
+</div>
+<div class="container w-50 pb-5">
+    <div class="card-body shadow p-3 mb-5 bg-white rounded ">
+        <div class="row text">
+            <div class="col-md-8 offset-2">
+                <p>
+                    <h1 class="text-center">Add a New Product</h1>
+                </p>
+                <div class="row">
+                    <div class="col-md-8 offset-2">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <div class="form-group pb-5">
+                                <label asp-for="PizzaName" class="control-label"></label>
+                                <input asp-for="PizzaName" class="form-control" />
+                                <span asp-validation-for="PizzaName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group pb-5">
+                                <label asp-for="PizzaIngre" class="control-label"></label>
+                                <input asp-for="PizzaIngre" class="form-control" />
+                                <span asp-validation-for="PizzaIngre" class="text-danger"></span>
+                            </div>
+                            <div class="form-group pb-5">
+                                <label asp-for="Price" class="control-label"></label>
+                                <input asp-for="Price" class="form-control" />
+                                <span asp-validation-for="Price" class="text-danger"></span>
+                            </div>
+                            <div class="form-group pb-5">
+                                <label asp-for="Category" class="control-label"></label>
+                                <select asp-for="Category" class="form-control">
+                                    <option>Please select category</option>
+                                    <option value="1">Klass 1</option>
+                                    <option value="2">Klass 2</option>
+                                    <option value="3">Klass 3</option>
+                                    <option value="4">Kebab Pizzor</option>
+                                    <option value="5">Bacon Pizzor</option>
+                                    <option value="6">Köttfärs Pizzor</option>
+                                    <option value="7">Kyckling Pizzor</option>
+                                    <option value="8">Fläskfilé Pizzor</option>
+                                    <option value="9">Oxfilé Pizzor</option>
+                                    <option value="10">Rullar</option>
+                                    <option value="11">Pita</option>
+                                    <option value="12">Tallrikar</option>
+                                    <option value="13">Såser</option>
+                                    <option value="14">Dricka</option>
+
+
+                                </select>
+                                <span asp-validation-for="Category" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                                <a class="btn btn-outline-secondary" asp-action="Index">Back</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+   
+
+
+
+   
+
+
+
+    </div>
+</div>

@@ -22,7 +22,7 @@ namespace PizzeriaApplicationMVC.Data
                             PizzaName = "Margaritha",
                             Price = 90,
                             PizzaIngre = "Tomat, Ost",
-                            Category = "Klass 1"
+                            Category = 1
 
                         },
                         new Products()
@@ -30,91 +30,91 @@ namespace PizzeriaApplicationMVC.Data
                             PizzaName = "Hawaii",
                             Price = 100,
                             PizzaIngre = "Tomat, Ost, Skinka, Ananas",
-                            Category = "Klass 2"
+                            Category = 2
                         },
                         new Products()
                         {
                             PizzaName = "La Mare",
                             Price = 105,
                             PizzaIngre = "Tomat, Ost, Skinka, Räkor, Ananas, Champinjoner",
-                            Category = "Klass 3"
+                            Category = 3
                         },
                         new Products()
                         {
                             PizzaName = "Kebab Pizza",
                             Price = 110,
                             PizzaIngre = "Tomat, Ost, Kebab, Lök",
-                            Category = "Kebab Pizzor"
+                            Category = 4
                         },
                         new Products()
                         {
                             PizzaName = "Belinda",
                             Price = 105,
                             PizzaIngre = "Tomat, Ost, Kebab, Lök",
-                            Category = "Bacon Pizzor"
+                            Category = 5
                         },
                         new Products()
                         {
                             PizzaName = "Amigo",
                             Price = 110,
                             PizzaIngre = "Tomat, Ost, Köttfärs, Paprika, Champinjoner",
-                            Category = "Köttfärs Pizzor"
+                            Category = 6
                         },
                         new Products()
                         {
                             PizzaName = "Prima",
                             Price = 110,
                             PizzaIngre = "Tomat, Ost, Kyckling, Räkor, Banan, Curry",
-                            Category = "Kyckling Pizzor"
+                            Category = 7
                         },
                         new Products()
                         {
                             PizzaName = "Capalccino",
                             Price = 115,
                             PizzaIngre = "Tomat, Ost, Fläskfilé, Skinka, Gorgonzola, Lök",
-                            Category = "Fläskfilé Pizzor"
+                            Category = 8
                         },
                         new Products()
                         {
                             PizzaName = "Romana",
                             Price = 120,
                             PizzaIngre = "Tomat, Ost, Oxfilé, Lök, Champinjoner, Bearnaisesås",
-                            Category = "Oxfilé Pizzor"
+                            Category = 9
                         },
                         new Products()
                         {
                             PizzaName = "Kebab Rulle",
                             Price = 105,
                             PizzaIngre = "Mixed sallad, Kebab, Sås",
-                            Category = "Rullar"
+                            Category = 10
                         },
                         new Products()
                         {
                             PizzaName = "Pita Kebab",
                             Price = 100,
                             PizzaIngre = "Mixed sallad, Kebab, Sås",
-                            Category = "Pita"
+                            Category = 11
                         },
                         new Products()
                         {
                             PizzaName = "Kebab Tallrik",
                             Price = 100,
                             PizzaIngre = "Mixed sallad, Kebab, Prommes, Sås",
-                            Category = "Tallrikar"
+                            Category = 12
                         },
                         new Products()
                         {
                             PizzaName = "Vitlöksås",
                             Price = 100,
                             PizzaIngre = "",
-                            Category = "Såser"
+                            Category = 13
                         },
                         new Products()
                         {
                             PizzaName = "Coca-Cola",
                             Price = 100,
-                            PizzaIngre = "Mixed sallad, Kebab, Prommes, Sås",
-                            Category = "Dricka"
+                            PizzaIngre = "",
+                            Category = 14
                         },
                     }) ;
                     context.SaveChanges();

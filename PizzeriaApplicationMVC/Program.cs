@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PizzeriaApplicationMVC.Data;
+using PizzeriaApplicationMVC.Data.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+//Service for Order/Management
+builder.Services.AddScoped<IProdukterService, ProdukterService>();
 
 var app = builder.Build();
 

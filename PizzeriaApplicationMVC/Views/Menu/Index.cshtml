@@ -1,4 +1,4 @@
-﻿@page
+﻿@model IEnumerable<Products>
 @using PizzeriaApplicationMVC;
 @section containerFluid
     {
@@ -27,881 +27,267 @@
 <div class="container w-50 border-top shadow p-3 mb-5 rounded pt-5 bg-white">
     <!--Klass 1-->
     <div class="justify-content-center text-center pb-5 h1" id="pizza1"><h3><u>Pizzor</u></h3></div>
-    <div class="justify-content-center text-center pb-5"><h5>Klass 1</h5></div>
+    <div class="justify-content-center text-center pt-5 pb-5"><h5>Klass 1</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom grow">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>95kr</small></p>
+        @foreach (var item in Model.Where(data => data.Category == 1))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom grow">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>95kr</small></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom grow">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>95kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom grow">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>95kr</small></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom grow">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>95kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom grow">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>95kr</small></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom grow">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>95kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5">
-        </div>
+        }
     </div>
     <!--Klass 2-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Klass 2</h5></div>
-
+    <div class="justify-content-center text-center pt-5 pb-5"><h5>Klass 2</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
+        @foreach (var item in Model.Where(data => data.Category == 2))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
+        }
     </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-    </div>
-
+       
     <!--Klass 3-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Klass 3</h5></div>
-
+    <div class="justify-content-center text-center pt-5 pb-5"><h5>Klass 3</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>110kr</small></p>
+        @foreach (var item in Model.Where(data => data.Category == 3))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>110kr</small></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>110kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>110kr</small></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>110kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>110kr</small></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>110kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5">
-        </div>
+        }
     </div>
     <!--Kebab-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Kebab</h5></div>
-
+    <div class="justify-content-center text-center pt-5 pb-5"><h5>Kebab</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>95kr</small></p>
+        @foreach (var item in Model.Where(data => data.Category == 4))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
+        }
+    </div>
+    <!--Bacon-->
+    <div class="justify-content-center text-center pt-5 pb-5"><h5>Bacon</h5></div>
+    <div class="row pb-3">
+        @foreach (var item in Model.Where(data => data.Category == 5))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>95kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>115kr</small></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <div class="row">
-                <p class="col">Tomat, ost</p>
-                <p class="col text-end"><small>105kr</small></p>
-            </div>
-        </div>
-        <div class="col float-end ms-5 me-5">
-        </div>
-    </div>
-
-    <!--Skinka-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Skinka: 105kr</h5></div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
+        }
     </div>
     <!--Köttfärs-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Köttfärs: 105kr</h5></div>
-
+    <div class="justify-content-center text-center pt-5 pb-5"><h5>Köttfärs</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
+        @foreach (var item in Model.Where(data => data.Category == 6))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
+            </div>
+        }
     </div>
     <!--Kyckling-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Kyckling: 105kr</h5></div>
-
+    <div class="justify-content-center text-center pt-5 pb-5"><h5>Kyckling</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
+        @foreach (var item in Model.Where(data => data.Category == 7))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
+            </div>
+        }
     </div>
     <!--Fläskfilé-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Fläskfilé: 105kr</h5></div>
-
+    <div class="justify-content-center text-center pt-5 pb-5"><h5>Fläskfilé</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
+        @foreach (var item in Model.Where(data => data.Category == 8))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
     <!--Oxfilé-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Oxfilé: 105kr</h5></div>
-
+    <div class="justify-content-center text-center pt-5 pb-5"><h5>Oxfilé</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
+        @foreach (var item in Model.Where(data => data.Category == 9))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
 </div>
 <!--Övrigt-->
 <div class="container w-50 border-top shadow p-3 mb-5 bg-white rounded">
     <div class="justify-content-center text-center pb-2 pt-5" id="övrigt"><h3><u>Övrigt</u></h3></div>
     <!--Rullar-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Rullar: 105kr</h5></div>
-
+    <div class="justify-content-center text-center pt-5  pb-5"><h5>Rullar</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
+        @foreach (var item in Model.Where(data => data.Category == 10))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
+            </div>
+        }
     </div>
     <!--Pita-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Pita: 105kr</h5></div>
-
+    <div class="justify-content-center text-center pt-5  pb-5"><h5>Pita</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
+        @foreach (var item in Model.Where(data => data.Category == 11))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
+            </div>
+        }
     </div>
     <!--Tallrikar-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Tallrikar: 105kr</h5></div>
-
+    <    <div class="justify-content-center text-center pt-5 pb-5"><h5>Tallrikar</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
+        @foreach (var item in Model.Where(data => data.Category == 12))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 </div>
 <div class="container w-50 border-top shadow p-3 mb-5 bg-white rounded">
     <!--Tillbehör-->
     <div class="justify-content-center text-center pb-2 pt-5" id="tillbehör"><h3><u>Tillbehör</u></h3></div>
     <!--Såser-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Såser</h5></div>
-
+    <div class="justify-content-center text-center pt-5 pb-5"><h5>Såser</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
+        @foreach (var item in Model.Where(data => data.Category == 13))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
+            </div>
+        }
     </div>
     <!--Dricka-->
-    <div class="justify-content-center text-center pb-5 pt-5"><h5>Dricka</h5></div>
-
+    <div class="justify-content-center text-center pt-5 pb-5"><h5>Dricka</h5></div>
     <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
-    </div>
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-    </div>
-
-    <div class="row pb-3">
-        <div class="col float-start ms-5 me-5 border-bottom">
-            <h5>Margaritha</h5>
-            <p>Tomat, ost</p>
-        </div>
-        <div class="col float-end ms-5 me-5 border-bottom ">
-            <h5>Margaritha</h5>
-            <p">Tomat, ost</p>
-        </div>
+        @foreach (var item in Model.Where(data => data.Category == 14))
+        {
+            <div class="col-6 grow">
+                <div class="row">
+                    <h5 class="col ms-5">@item.PizzaName</h5>
+                    <p class="col text-end align-text-bottom me-5"><small>@item.Price Kr</small></p>
+                </div>
+                <p class="col ms-5 me-5">@item.PizzaIngre</p>
+                <div class="ms-4 me-4 mb-3">
+                    <div class="border-bottom">
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 </div>
 
